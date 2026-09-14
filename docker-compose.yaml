@@ -1,0 +1,16 @@
+services:
+  postgres:
+    image: pgvector/pgvector:pg18-trixie
+    container_name: postgres_learn_spring_ai
+    environment:
+      POSTGRES_DB: learnspringai
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql
+    restart: unless-stopped
+
+volumes:
+  pgdata:
