@@ -15,7 +15,7 @@ public class AiConfig {
     public ChatClient chatClient(ChatClient.Builder builder, ChatMemory chatMemory) {
         return builder
                 .defaultAdvisors(
-                        MessageChatMemoryAdvisor.builder(chatMemory).build()
+//                        MessageChatMemoryAdvisor.builder(chatMemory).build()
                 )
                 .defaultSystem("""
                         Always answer in strictly less than 500 words.
