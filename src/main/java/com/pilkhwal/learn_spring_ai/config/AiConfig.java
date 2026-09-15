@@ -1,10 +1,11 @@
 package com.pilkhwal.learn_spring_ai.config;
 
 import org.springframework.ai.chat.client.ChatClient;
-import org.springframework.ai.chat.client.advisor.MessageChatMemoryAdvisor;
 import org.springframework.ai.chat.memory.ChatMemory;
 import org.springframework.ai.chat.memory.ChatMemoryRepository;
 import org.springframework.ai.chat.memory.MessageWindowChatMemory;
+import org.springframework.ai.google.genai.image.GoogleGenAiImageModel;
+import org.springframework.ai.image.ImageModel;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -30,5 +31,10 @@ public class AiConfig {
                 .chatMemoryRepository(jdbcChatMemoryRepository)
                 .maxMessages(20)
                 .build();
+    }
+
+    @Bean
+    public ImageModel imageModel(GoogleGenAiImageModel googleGenAiImageModel) {
+        return googleGenAiImageModel;
     }
 }
